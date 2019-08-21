@@ -1,4 +1,4 @@
-package com.joachen.songr;
+package com.joachen.songr.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
