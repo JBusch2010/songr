@@ -1,5 +1,6 @@
 package com.joachen.songr;
 
+import com.joachen.songr.controllers.HomeController;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
