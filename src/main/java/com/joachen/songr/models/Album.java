@@ -1,9 +1,6 @@
 package com.joachen.songr.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Album {
@@ -15,6 +12,9 @@ public class Album {
     int songCount;
     int length;
     String imageURL;
+
+    @ManyToOne
+    Song song;
 
     public Album() {}
 
