@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
 public class SongController {
@@ -19,5 +21,12 @@ public class SongController {
         System.out.println(s.getAlbum());
         m.addAttribute("song", s);
         return "oneSong";
+    }
+
+    @PostMapping("/albums/song")
+    public RedirectView addSong(String title) {
+        Song s = new Song(title);
+        songRepository.save(s);
+        return new RedirectView("/albums/song");
     }
 }

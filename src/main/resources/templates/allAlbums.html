@@ -7,23 +7,24 @@
 <body>
 <h1>All the Albums</h1>
 
+<!--https://www.w3schools.com/html/html_images.asp-->
 <div th:each="album : ${albums}" class="album">
 
     <h3 th:id="${album.title}" th:text="${album.title}">Album Title</h3>
     <p>Song Count: <span th:text="${album.songCount}"></span></p>
     <p>Length: <span th:text="${album.length}"></span> secs</p>
-    <img th:src="${album.imageURL}">
+    <img th:src="${album.imageURL}" width="300" height="300">
     <p>Created by <span th:text="${album.artist}"></span></p>
 
 </div>
 
 <div>
     <form method="POST" action="/albums">
-        Title:<input name="title" />
-        Artist:<input name="artist" />
-        Song Count:<input name="songCount" />
-        Album Length:<input name="length" />
-        Cover Art:<input name="imageURL" />
+        Title:<input name="title" /><br>
+        Artist:<input name="artist" /><br>
+        Song Count:<input name="songCount" /><br>
+        Album Length:<input name="length" /><br>
+        Cover Art:<input name="imageURL" /><br>
         <input type="submit" />
     </form>
 </div>
